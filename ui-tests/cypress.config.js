@@ -7,5 +7,8 @@ module.exports = defineConfig({
     },
     chromeWebSecurity: false,
     // defaultCommandTimeout: 8000
+    env: {
+      hub88_url: 'https://hub88.io/'
+    }
   },
 });
