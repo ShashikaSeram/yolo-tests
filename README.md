@@ -16,3 +16,5 @@ There is a respective README.MD for each test framework with guidence.
 Test Deliverables :
 
 The following test deliverables are in the `/test-delivereables` directory.
+* Test Plan 
+* Bug report
