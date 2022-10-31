@@ -31,6 +31,18 @@ Ex:
 
 * --browser chromium
 
+## Run E2E UI tests in Docker
+If you have docker installed, you can just pull the image I have created and run tests with it. The docker will volume the results report at the end of tests to your local machine.
+
+1. Pull the docker image: ```docker pull shashikaseram/yolo-tests:1.0-amd64```
+2. Run the docker ```docker run -t -i -v ${PWD}/yolo-ui-test-reports:/ui-tests/cypress/reports shashikaseram/yolo-tests:1.0-amd64 npx cypress run --browser chrome```
+
+In the above command you can also change the browser you want to run the tests in with headless mode. 
+Ex:
+* --browser firefox
+* --browser edge
+* --browser chromium
+
 
 ##### Reports :
 
