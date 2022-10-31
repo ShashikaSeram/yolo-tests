@@ -1,10 +1,11 @@
 Feature: Test users GET, POST and DELETE
 
   Background:
-    * url 'https://gorest.co.in'
-    * def headerData = {Accept: 'application/json' , Content-Type: 'application/json' , Authorization: 'Bearer 67ac373930d4f90d2e83985373b6b5eda93d16ef244de9633dadd3ea8c4fa6ed'}
+    * url baseUrl
+    * def headerData = {Accept: 'application/json' , Content-Type: 'application/json' , Authorization: ''}
+    * set headerData.Authorization = authToken
     * headers headerData
-    * def newUserBody = read('inputRequestBody.json')
+    * def newUserBody = read('json_files/inputRequestBody.json')
 
   Scenario: Get all users and validate 200 status code
     Given path 'public/v2/users'
@@ -20,7 +21,7 @@ Feature: Test users GET, POST and DELETE
     When method post
     Then status 201
     #Verify created user details matches with the expected result
-    * def expectedOutput = read('expectedResponse.json')
+    * def expectedOutput = read('json_files/expectedResponse.json')
     And match response == expectedOutput
 
     * def id = response.id
@@ -79,8 +80,3 @@ Feature: Test users GET, POST and DELETE
       | Daniel | harry29gmail.com  | male   | inactive | email  | is invalid                            |
       | Daniel | harry29@gmail.com | m      | inactive | gender | can't be blank, can be male of female |
       | Daniel | harry29@gmail.com | male   | no       | status | can't be blank                        |
-
-
-
-
-

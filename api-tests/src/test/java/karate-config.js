@@ -6,7 +6,8 @@ function fn() {
   }
   var config = {
     env: env,
-    myVarName: 'someValue'
+   baseUrl: 'https://gorest.co.in',
+   authToken: 'Bearer 67ac373930d4f90d2e83985373b6b5eda93d16ef244de9633dadd3ea8c4fa6ed'
   }
   if (env == 'dev') {
     // customize
